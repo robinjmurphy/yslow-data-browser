@@ -14,9 +14,13 @@ block content
         th Total HTTP requests
         th Page weight
         th Load time
+        th HTML requests
+        th Image requests
         th CSS requests
-        th CSS weight
         th JS requests
+        th HTML weight
+        th Image weight
+        th CSS weight
         th JS weight
     tbody
     - results.forEach(function (result) {
@@ -27,8 +31,12 @@ block content
           td= result.data.r
           td= (result.data.w / 1024).toFixed(2) + ' kB'
           td= result.data.lt + ' ms'
+          td= result.data.stats.doc.r
+          td= result.data.stats.image.r
           td= result.data.stats.css.r
-          td= (result.data.stats.css.w / 1024).toFixed(2) + ' kB'
           td= result.data.stats.js.r
+          td= (result.data.stats.doc.w / 1024).toFixed(2) + ' kB'
+          td= (result.data.stats.image.w / 1024).toFixed(2) + ' kB'
+          td= (result.data.stats.css.w / 1024).toFixed(2) + ' kB'
           td= (result.data.stats.js.w / 1024).toFixed(2) + ' kB'
     - });
