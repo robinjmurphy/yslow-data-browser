@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1
+    a(href="#{url}")= url
+  p.results-info
+    strong= results.length
+    |  results
+  table
+    thead
+      tr
+        th Test
+        th YSlow score
+        th Total HTTP requests
+        th Page weight
+        th Load time
+        th CSS requests
+        th CSS weight
+        th JS requests
+        th JS weight
+    tbody
+    - results.forEach(function (result) {
+        tr
+          td
+            a(href="/results/#{result.id}" title="#{result.timestamp}")= result.date
+          td= result.data.o
+          td= result.data.r
+          td= (result.data.w / 1024).toFixed(2) + ' kB'
+          td= result.data.lt + ' ms'
+          td= result.data.stats.css.r
+          td= (result.data.stats.css.w / 1024).toFixed(2) + ' kB'
+          td= result.data.stats.js.r
+          td= (result.data.stats.js.w / 1024).toFixed(2) + ' kB'
+    - });

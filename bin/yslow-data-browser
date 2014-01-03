@@ -1,0 +1,17 @@
+#! /usr/bin/env node
+
+var program = require('commander');
+var chalk = require('chalk');
+var app = require('..');
+var apiClient = require('../lib/apiClient');
+
+program
+  .option('-H, --host <host>', 'specify the host [0.0.0.0]', '0.0.0.0')
+  .option('-p, --port <port>', 'specify the port [4000]', '4000')
+  .option('-s, --server <server>', 'specify the REST API server [http://localhost:3000]', 'http://localhost:3000')
+  .parse(process.argv);
+
+apiClient.setBaseUrl(program.server);
+app.listen(program.port, program.host);
+console.log('Listening on:', chalk.yellow(program.host + ':' + program.port));
+console.info('Using API host:', chalk.yellow(program.server));

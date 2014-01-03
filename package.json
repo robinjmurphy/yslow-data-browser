@@ -1,0 +1,31 @@
+{
+  "name": "yslow-data-browser",
+  "version": "0.1.0",
+  "description": "Browser interface for historic YSlow data",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robinjmurphy/yslow-data-browser"
+  },
+  "keywords": [
+    "yslow",
+    "data",
+    "browser"
+  ],
+  "author": "robin@robinmurphy.co.uk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinjmurphy/yslow-data-browser/issues"
+  },
+  "homepage": "https://github.com/robinjmurphy/yslow-data-browser",
+  "dependencies": {
+    "express": "~3.4.7",
+    "commander": "~2.1.0",
+    "request": "~2.30.0",
+    "chalk": "~0.4.0",
+    "jade": "~1.0.0",
+    "async": "~0.2.9",
+    "lodash": "~2.4.1",
+    "dateformat": "~1.0.7-1.2.3"
+  }
+}

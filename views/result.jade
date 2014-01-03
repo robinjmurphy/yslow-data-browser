@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p URL: 
+    a(href="#{result.data.u}")= result.data.u
+  p Date tested: 
+    span(title="#{result.timestamp}")= result.date
+
+  div.code
+    pre
+      code= JSON.stringify(result.data, null, 4)

@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title YSlow Data Browser - #{title}
+    link(rel='stylesheet', href='/css/reset.css')
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel="stylesheet", href="/css/syntax.css")
+    script(src="/js/highlight.pack.js")
+    script.
+      hljs.initHighlightingOnLoad();
+  body
+    header
+      p.site-heading
+        a(href="/") YSlow Data Browser
+    div(role="main" class="main")
+      block content
